@@ -1,0 +1,17 @@
+# React
+client/node_modules/
+client/dist/
+client/.env
+
+# Django
+server/__pycache__/
+server/*.pyc
+server/db.sqlite3
+server/.env
+
+# Python environment
+venv/
+.env
+
+# Editor
+.vscode/
