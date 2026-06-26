@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Bicko from "../assets/Bicko.jpg"; // Adjust the path as necessary
+import Ekron from '../assets/Ekron.png'
 
 // Animation variants for text and image
 const textVariant = {
@@ -16,7 +17,7 @@ const imageVariant = {
 
 export default function HeroSection() {
   return (
-    <section className="bg-linear-to-br from-indigo-600 via-purple-600 to-pink-500 text-white">
+    <section id="hero" className="bg-linear-to-br from-indigo-600 via-purple-600 to-pink-500 text-white">
       <div className="container mx-auto px-6 py-20 flex flex-col-reverse md:flex-row items-center gap-10">
         
         {/* Text Content */}
@@ -57,7 +58,7 @@ export default function HeroSection() {
           variants={imageVariant}
         >
           <img
-            src={Bicko}
+            src={Ekron}
             alt="Hero Illustration"
             className="rounded-lg shadow-lg"
           />
