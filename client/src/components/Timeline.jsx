@@ -1,29 +1,84 @@
-import timeline from "../data/timeline";
+"use client";
 
-export default function Timeline() {
-  return (
-    <section id="timeline" className="py-20 bg-gray-950">
-      <h2 className="text-center text-4xl font-bold mb-16">
-        My Evolution
-      </h2>
+const Card = ({
+  children,
+  className = ""
+}) => <div className={`rounded-2xl bg-white p-12 text-sm leading-7 text-gray-700 shadow-lg shadow-black/5 dark:bg-gray-950 dark:text-gray-300 dark:shadow-white/5 ${className}`}>
+    {children}
+  </div>;
+const Badge = ({
+  children,
+  className = ""
+}) => <span className={`inline-flex items-center rounded-full bg-sky-100 px-2.5 py-0.5 text-xs font-medium text-sky-800 dark:bg-sky-900/30 dark:text-sky-300 ${className}`}>
+    {children}
+  </span>;
+const defaultTimelineData = [{
+  id: "1",
+  title: "Senior Full Stack Developer",
+  company: "TechCorp Solutions",
+  date: "2023 - Present",
+  description: "Led development team, implemented CI/CD pipelines, reduced deployment time by 60%."
+}, {
+  id: "2",
+  title: "Full Stack Developer",
+  company: "StartupXYZ",
+  date: "2021 - 2023",
+  description: "Developed client projects using modern web technologies and collaborated with cross-functional teams."
+}, {
+  id: "3",
+  title: "E-Commerce Platform",
+  company: "Personal Project",
+  date: "2022",
+  description: "Built complete e-commerce solution with 99.9% uptime handling 10k+ daily transactions."
+}, {
+  id: "4",
+  title: "Computer Science Degree",
+  company: "University of Technology",
+  date: "2017 - 2021",
+  description: "Bachelor of Science, Magna Cum Laude with 3.8 GPA, focus on software engineering."
+}];
+export default function TimelinePage3({
+  data = defaultTimelineData,
+  className = ""
+}) {
+  return <div className={`relative grid min-h-screen grid-cols-[1fr_2.5rem_auto_2.5rem_1fr] grid-rows-[1fr_1px_auto_1px_1fr] bg-white [--pattern-fg:rgb(3_7_18/0.05)] dark:bg-gray-950 dark:[--pattern-fg:rgb(255_255_255/0.1)] ${className}`}>
+      <div className="col-start-3 row-start-3 flex max-w-2xl flex-col bg-gray-100 p-2 dark:bg-white/10">
+        <Card>
+          <h1 className="text-3xl font-bold text-gray-950 dark:text-white mb-12 tracking-tight">
+            Professional Timeline
+          </h1>
 
-      <div className="max-w-3xl mx-auto space-y-12 relative">
-        <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-neon" />
-
-        {timeline.map((item, idx) => (
-          <div
-            key={idx}
-            className={`relative flex flex-col ${
-              idx % 2 === 0 ? "items-start text-left" : "items-end-safe text-right"
-            }`}
-          > 
-            <div className="bg-zinc-900 p-6 rounded-xl shadow-lg border border-gray-700 max-w-sm">
-              <h3 className="font-bold text-neon-cyan text-xl">{item.year}</h3>
-              <p className="mt-2 text-gray-300">{item.text}</p>
-            </div>
+          <div className="space-y-10">
+            {data.map((item, index) => <div key={item.id} className="relative group transition-all duration-300 hover:translate-x-1">
+                {index !== data.length - 1 && <div className="absolute left-3 top-8 h-full w-0.5 bg-linear-to-b from-black via-gray-400 to-white opacity-60 group-hover:opacity-100 transition-opacity duration-300" />}
+                <div className="flex gap-6">
+                  <div className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-sky-400 to-sky-600 mt-1 shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <div className="h-2.5 w-2.5 rounded-full bg-white shadow-sm" />
+                  </div>
+                  <div className="flex-1 space-y-3 group-hover:text-gray-900 dark:group-hover:text-white transition-colors duration-300">
+                    <div className="space-y-1">
+                      <h3 className="font-semibold text-lg text-gray-950 dark:text-white group-hover:text-sky-700 dark:group-hover:text-sky-300 transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <div className="flex items-center gap-2">
+                        <p className="text-sky-600 dark:text-sky-400 font-medium">{item.company}</p>
+                        <Badge>{item.date}</Badge>
+                      </div>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:bg-gray-50 dark:group-hover:bg-gray-800/30 rounded-lg p-3 -m-3 transition-all duration-300">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>)}
           </div>
-        ))}
+        </Card>
       </div>
-    </section>
-  );
+
+      {}
+      <div className="relative -right-px col-start-2 row-span-full row-start-1 border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-fixed"></div>
+      <div className="relative -left-px col-start-4 row-span-full row-start-1 border-x border-x-(--pattern-fg) bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-fixed"></div>
+      <div className="relative -bottom-px col-span-full col-start-1 row-start-2 h-px border-x-(--pattern-fg)"></div>
+      <div className="relative -top-px col-span-full col-start-1 row-start-4 h-px bg-(--pattern-fg)"></div>
+    </div>;
 }

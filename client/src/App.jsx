@@ -10,7 +10,9 @@ function App(){
     <main>
       <NavBar />
       <HeroSection />
-      <SkillOrbit />
+      <div className="relative w-full h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] flex items-center justify-center">
+        <SkillOrbit />
+      </div>
       <Timeline />
       <ProjectGrid />
     </main>
