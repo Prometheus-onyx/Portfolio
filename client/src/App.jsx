@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import NavBar from "./components/NavBar"
 import HeroSection from "./components/Hero"
 import SkillOrbit from "./components/SkillOrbit";
@@ -12,6 +13,7 @@ function App(){
       <SkillOrbit />
       <Timeline />
       <ProjectGrid />
+      <Analytics />
     </main>
   );
 }
