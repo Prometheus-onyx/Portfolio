@@ -14,7 +14,7 @@ export default function Timeline() {
           <div
             key={idx}
             className={`relative flex flex-col ${
-              idx % 2 === 0 ? "items-start text-left" : "items-end text-right"
+              idx % 2 === 0 ? "items-start text-left" : "items-end-safe text-right"
             }`}
           > 
             <div className="bg-zinc-900 p-6 rounded-xl shadow-lg border border-gray-700 max-w-sm">

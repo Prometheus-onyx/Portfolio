@@ -3,6 +3,7 @@ import HeroSection from "./components/Hero"
 import SkillOrbit from "./components/SkillOrbit";
 import Timeline from "./components/Timeline";
 import ProjectGrid from "./components/ProjectGrid";
+//import LoadingIndicator from "./components/LoadingIndicator";
 
 function App(){
   return (

@@ -1,6 +1,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon, } from '@heroicons/react/24/outline'
 import Bicko from "../assets/Bicko.jpg"
+import Ekron from '../assets/Ekron.png'
 
 const navigation = [
   { name: 'Home', href: '#', current: true },
@@ -34,8 +35,8 @@ export default function NavBar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
               <img
-                alt="Your Company"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                alt="My Company"
+                src={Ekron}
                 className="h-8 w-auto"
               />
             </div>
@@ -73,7 +74,7 @@ export default function NavBar() {
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">Open user menu</span>
                 <img
-                  alt=""
+                  alt="My Profile"
                   src={Bicko}
                   className="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10"
                 />
