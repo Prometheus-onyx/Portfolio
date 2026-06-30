@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Bicko from "../assets/Bicko.jpg"; // Adjust the path as necessary
-import Ekron from '../assets/Ekron.png'
+import Steve from '../assets/Steve.jpg'  // Adjust the path as necessary
 
 // Animation variants for text and image
 const textVariant = {
@@ -58,7 +57,7 @@ export default function HeroSection() {
           variants={imageVariant}
         >
           <img
-            src={Ekron}
+            src={Steve}
             alt="Hero Illustration"
             className="rounded-lg shadow-lg"
           />

@@ -1,5 +1,7 @@
 "use client";
 
+import timeline from "../data/timeline";
+
 const Card = ({
   children,
   className = ""
@@ -12,33 +14,9 @@ const Badge = ({
 }) => <span className={`inline-flex items-center rounded-full bg-sky-100 px-2.5 py-0.5 text-xs font-medium text-sky-800 dark:bg-sky-900/30 dark:text-sky-300 ${className}`}>
     {children}
   </span>;
-const defaultTimelineData = [{
-  id: "1",
-  title: "Senior Full Stack Developer",
-  company: "TechCorp Solutions",
-  date: "2023 - Present",
-  description: "Led development team, implemented CI/CD pipelines, reduced deployment time by 60%."
-}, {
-  id: "2",
-  title: "Full Stack Developer",
-  company: "StartupXYZ",
-  date: "2021 - 2023",
-  description: "Developed client projects using modern web technologies and collaborated with cross-functional teams."
-}, {
-  id: "3",
-  title: "E-Commerce Platform",
-  company: "Personal Project",
-  date: "2022",
-  description: "Built complete e-commerce solution with 99.9% uptime handling 10k+ daily transactions."
-}, {
-  id: "4",
-  title: "Computer Science Degree",
-  company: "University of Technology",
-  date: "2017 - 2021",
-  description: "Bachelor of Science, Magna Cum Laude with 3.8 GPA, focus on software engineering."
-}];
+
 export default function TimelinePage3({
-  data = defaultTimelineData,
+  data = timeline,
   className = ""
 }) {
   return <div className={`relative grid min-h-screen grid-cols-[1fr_2.5rem_auto_2.5rem_1fr] grid-rows-[1fr_1px_auto_1px_1fr] bg-white [--pattern-fg:rgb(3_7_18/0.05)] dark:bg-gray-950 dark:[--pattern-fg:rgb(255_255_255/0.1)] ${className}`}>
