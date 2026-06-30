@@ -7,7 +7,7 @@ import ProjectGrid from "./components/ProjectGrid";
 
 function App(){
   return (
-    <main>
+    <main className="pt-16">
       <NavBar />
       <HeroSection />
       <div className="relative w-full h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] flex items-center justify-center">
